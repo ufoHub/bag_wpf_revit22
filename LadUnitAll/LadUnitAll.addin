@@ -1,0 +1,11 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<RevitAddIns>
+  <AddIn Type="Application">
+    <Name>LadPanelAll</Name>
+    <Assembly>LadUnitAll.dll</Assembly>
+    <AddInId>B879D684-8254-4197-A646-72AA481C962D</AddInId>
+    <FullClassName>ARprojUnitAll.LadPanelAll</FullClassName>
+    <VendorId>ARP</VendorId>
+    <VendorDescription>ARP, https://www.youtube.com/channel/UCCtJdWuU7usIOfT9NNC2ucw</VendorDescription>
+  </AddIn>
+</RevitAddIns>

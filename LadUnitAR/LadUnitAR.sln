@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.9.34723.18
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LadUnitAR", "RoomArea\LadUnitAR.csproj", "{3410566D-E7CF-4CB4-A7B2-B10D7DF81AE0}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{3410566D-E7CF-4CB4-A7B2-B10D7DF81AE0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3410566D-E7CF-4CB4-A7B2-B10D7DF81AE0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3410566D-E7CF-4CB4-A7B2-B10D7DF81AE0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3410566D-E7CF-4CB4-A7B2-B10D7DF81AE0}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {9A354D59-5704-4D5E-A955-ED2B22FF9B6A}
+	EndGlobalSection
+EndGlobal
