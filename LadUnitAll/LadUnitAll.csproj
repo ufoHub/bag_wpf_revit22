@@ -11,9 +11,20 @@
     <FileAlignment>512</FileAlignment>
     <RootNamespace>ARprojUnitAll</RootNamespace>
     <TargetFrameworkProfile />
+    <Platforms>AnyCPU;x64</Platforms>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>TRACE;DEBUG</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <PlatformTarget>x64</PlatformTarget>
     <DebugSymbols>true</DebugSymbols>
     <DebugType>full</DebugType>
     <Optimize>false</Optimize>
@@ -31,24 +42,16 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
-  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x64'">
-    <DebugSymbols>true</DebugSymbols>
-    <OutputPath>bin\x64\Debug\</OutputPath>
-    <DefineConstants>TRACE;DEBUG</DefineConstants>
-    <DebugType>full</DebugType>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
     <PlatformTarget>x64</PlatformTarget>
-    <LangVersion>7.3</LangVersion>
-    <ErrorReport>prompt</ErrorReport>
-  </PropertyGroup>
-  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x64'">
-    <OutputPath>bin\x64\Release\</OutputPath>
-    <DefineConstants>TRACE</DefineConstants>
-    <Optimize>true</Optimize>
     <DebugType>pdbonly</DebugType>
-    <PlatformTarget>x64</PlatformTarget>
-    <LangVersion>7.3</LangVersion>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
   </PropertyGroup>
+
   <ItemGroup>
     <None Remove=".gitattributes" />
     <None Remove=".gitignore" />
@@ -83,22 +86,16 @@
     <Reference Include="WindowsBase" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="Resources\SectionBox3D.png" />
-    <Resource Include="Resources\RenumberElement.png" />
-    <Resource Include="Resources\RenumberSheet.png" />
-  </ItemGroup>
-  <ItemGroup>
     <None Include="LadUnitAll.addin">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
   </ItemGroup>
   <ItemGroup>
     <Resource Include="Resources\SummaryParameter.png" />
-  </ItemGroup>
-  <ItemGroup>
     <Resource Include="Resources\BaseLevel.png" />
-  </ItemGroup>
-  <ItemGroup>
+    <Resource Include="Resources\SectionBox3D.png" />
+    <Resource Include="Resources\RenumberElement.png" />
+    <Resource Include="Resources\RenumberSheet.png" />
     <Resource Include="Resources\LAD_32.png" />
     <Resource Include="Resources\BaseFrame.png" />
     <Resource Include="Resources\SwapElement.png" />
@@ -108,20 +105,24 @@
     <Resource Include="Resources\MoveZElement_16.png" />
     <Resource Include="Resources\SwapElement_16.png" />
     <Resource Include="Resources\SectionBox3D_16.png" />
-  </ItemGroup>
-  <ItemGroup>
     <Resource Include="Resources\SummaryParameter_16.png" />
-  </ItemGroup>
-  <ItemGroup>
     <Resource Include="Resources\RenumberElement_16.png" />
-  </ItemGroup>
-  <ItemGroup>
     <Resource Include="Resources\RenumberSheet_16.png" />
-  </ItemGroup>
-  <ItemGroup>
     <Resource Include="Resources\BaseLevel_16.png" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Compile Update="Properties\Resources.Designer.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Update="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>
     <PostBuildEvent>if exist "$(AppData)\Autodesk\Revit\Addins\2022" copy "$(ProjectDir)$(OutputPath)*.dll" "$(AppData)\Autodesk\Revit\Addins\2022"
